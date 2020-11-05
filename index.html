@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Weather Dashboard</h1>
+    </header>  
+    <div class="searchbar">
+        <p>Search City Here</p>
+    <form class="form-inline">
+        <input class="form-control form-control-sm mr-3 w-25" type="text" placeholder="Search"
+          aria-label="Search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </form>
+    </div>
+    <div class="container cites"></div>   
+    <div class="container weatherInfo"></div>
+    <div class="container fiveDayForecast"></div>
+   
+    <script src="script.js"></script>
+</body>
+</html>

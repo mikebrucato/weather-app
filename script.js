@@ -12,3 +12,9 @@ var windSpeedEl = $(".windSpeed");
 var uvIndexEl = $(".uvIndex");
 var cardRow = $(".card-row");
 
+//creates current date 'dd/mm/yyy'
+var newDate = new Date();
+var dd = String(newDate.getDate()).padStart(2, '0');
+var mm = String(newDate.getMonth() + 1).padStart(2, '0');
+var yyyy = newdate.getFullYear();
+var newDate = mm + '-' + dd + '-' + yyyy;

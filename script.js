@@ -42,13 +42,24 @@ $(document).on("click", ".historyEntry", function() {
 })
 
 searchHistoryEl.empty();
-  var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistory"));
-for (var i = 0; i < searchHistoryArr.length; i++) {
+  var searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
+for (var i = 0; i < searchHistoryArray.length; i++) {
     
     // create new list element for each array index
   var newListItem = $("<li>").attr("class", "historyEntry");
-    newListItem.text(searchHistoryArr[i]);
+    newListItem.text(searchHistoryArray[i]);
     searchHistoryEl.prepend(newListItem);
 }
+
+function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, cityWeatherIcon, uvVal) {
+    cityNameEl.text(cityName)
+    currentDateEl.text(`(${newDate})`)
+    tempEl.text(`Temperature: ${cityTemp} °F`);
+    humidityEl.text(`Humidity: ${cityHumidity}%`);
+    windSpeedEl.text(`Wind Speed: ${cityWindSpeed} MPH`);
+    uvIndexEl.text(`UV Index: ${uvVal}`);
+    weatherIconEl.attr("src", cityWeatherIcon);
+}
+
 
 

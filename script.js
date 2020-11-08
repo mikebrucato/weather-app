@@ -16,14 +16,13 @@ var cardRow = $(".card-row");
 var newDate = new Date();
 var dd = String(newDate.getDate()).padStart(2, '0');
 var mm = String(newDate.getMonth() + 1).padStart(2, '0');
-var yyyy = newdate.getFullYear();
+var yyyy = newDate.getFullYear();
 var newDate = mm + '-' + dd + '-' + yyyy;
 
 
 if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
     
 }else{
-    console.log("searchHistory loaded into searchHistoryArr");
     renderSearchHistory();
 }
 
@@ -36,3 +35,20 @@ searchBtn.on("click", function(error) {
     }
     getWeather(searchInput.val());
 });
+
+$(document).on("click", ".historyEntry", function() {
+    var thisElement = $(this);
+    getWeather(thisElement.text());
+})
+
+searchHistoryEl.empty();
+  var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistory"));
+for (var i = 0; i < searchHistoryArr.length; i++) {
+    
+    // create new list element for each array index
+  var newListItem = $("<li>").attr("class", "historyEntry");
+    newListItem.text(searchHistoryArr[i]);
+    searchHistoryEl.prepend(newListItem);
+}
+
+

@@ -18,3 +18,21 @@ var dd = String(newDate.getDate()).padStart(2, '0');
 var mm = String(newDate.getMonth() + 1).padStart(2, '0');
 var yyyy = newdate.getFullYear();
 var newDate = mm + '-' + dd + '-' + yyyy;
+
+
+if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
+    
+}else{
+    console.log("searchHistory loaded into searchHistoryArr");
+    renderSearchHistory();
+}
+
+// returns an alert of the user does not enter a valid city
+searchBtn.on("click", function(error) {
+    error.preventDefault();
+    if (searchInput.val() === "") {
+        alert("please enter a valid city");
+        return;
+    }
+    getWeather(searchInput.val());
+});
